@@ -15,7 +15,7 @@ def extract_think_content(response: str) -> tuple:
     """
     think_start = response.find("<think>")
     think_end = response.find("</think>")
-    
+     
     if think_start != -1 and think_end != -1:
         think_content = response[think_start + len("<think>") : think_end].strip()
         remaining_response = response[:think_start] + response[think_end + len("</think>") :].strip()
